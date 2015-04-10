@@ -6,7 +6,8 @@ Information for QR-code is read from a text file.
 Using tool
 
    Use following format to start app:
-                    > qrcodegen.exe [type] [source file name] [destination path]
+                   
+                    qrcodegen.exe [type] [source file name] [destination path]
                     
                     [type] - type of the output
                     
