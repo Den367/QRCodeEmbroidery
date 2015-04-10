@@ -7,6 +7,9 @@ Using tool
 
    Use following format to start app:
                     > qrcodegen.exe [type] [source file name] [destination path]
+                    
                     [type] - type of the output
+                    
                     [source file name] - name of a file in the current directory of exe
+                    
                     [destination path] - path where generated QR-code file will be stored
