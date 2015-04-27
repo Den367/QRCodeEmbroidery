@@ -9,7 +9,10 @@ Using tool
                    
                     qrcodegen.exe [type] [source file name] [destination path]
                     
-                    [type] - type of the output
+                    [type] - type of the output:
+                         /dst
+                         /svg
+                         /png
                     
                     [source file name] - name of a file in the current directory of exe
                     
