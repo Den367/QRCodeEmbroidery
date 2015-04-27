@@ -20,8 +20,12 @@ namespace QRCodeGen
             switch (args.Length)
             {
                 case 0:
-                    Console.WriteLine("Use following format to start app:");
+                    Console.WriteLine("Use following command line format to start app:");
                     Console.WriteLine("qrcodegen [type] [source file name] [destination path]");
+                    Console.WriteLine(" [type] - type of the output:");
+                    Console.WriteLine(" /dst");
+                    Console.WriteLine(" /svg");
+                    Console.WriteLine(" /png");
                     System.Environment.Exit(0);
                     break;
                 case 1:
@@ -73,6 +77,7 @@ namespace QRCodeGen
             using (var inputStreamReader = new StreamReader(fileName))
             {
                 var text = inputStreamReader.ReadToEnd();
+                if (!string.IsNullOrEmpty(text))
                 using (Stream outStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write))
                 {
                     if (qrcodeGen != null)
@@ -81,6 +86,7 @@ namespace QRCodeGen
                         qrcodeGen.FillStream(outStream);
                     }
                 }
+                Console.WriteLine("File is empty, no data to encode!");
             }
         }
     }

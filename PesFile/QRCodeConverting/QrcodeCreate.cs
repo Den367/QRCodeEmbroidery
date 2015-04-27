@@ -1,7 +1,5 @@
 ﻿using System.Text;
-
 using MessagingToolkit.QRCode.Codec;
-
 
 namespace EmbroideryFile.QRCode
 {
@@ -10,10 +8,8 @@ namespace EmbroideryFile.QRCode
 
         public bool[][] GetQRCodeMatrix(string DataToEncode)
         {
-
             if (string.IsNullOrEmpty(DataToEncode))
-                return null;
-
+                return new bool[1][];
             QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
             qrCodeEncoder.CharacterSet = "UTF8";
             qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
@@ -21,9 +17,6 @@ namespace EmbroideryFile.QRCode
             qrCodeEncoder.QRCodeVersion = -1;
             qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.L;
             return qrCodeEncoder.CalQrcode(Encoding.ASCII.GetBytes(DataToEncode));
-
         }
-
-       
     }
 }
